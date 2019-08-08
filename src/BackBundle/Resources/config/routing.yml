@@ -1,0 +1,73 @@
+back_homepage:
+    path:     /
+    defaults: { _controller: BackBundle:Default:index }
+
+SocialMedia_show:
+    path:     SocialMedia/show/
+    defaults: { _controller: BackBundle:SocialMedia:showContact}
+
+contact_show:
+    path:     contact/show/
+    defaults: { _controller: BackBundle:Contact:showContact}
+contact_edit:
+    path:     contact/edit/{id}/
+    defaults: { _controller: BackBundle:Contact:editContact}
+
+about:
+    path:     about/
+    defaults: { _controller: BackBundle:About:About}
+
+slider_add:
+    path:     slider/add/
+    defaults: { _controller: BackBundle:Slider:addSlider}
+slider_show:
+    path:     slider/show/
+    defaults: { _controller: BackBundle:Slider:showSlider}
+slider_edit:
+    path:     slider/edit/{id}
+    defaults: { _controller: BackBundle:Slider:editSlider}
+slider_delete:
+    path:     slider/delete/{id}
+    defaults: { _controller: BackBundle:Slider:deleteSlider}
+
+gallery_add:
+    path:     gallery/add/
+    defaults: { _controller: BackBundle:Gallery:addGallery}
+gallery_show:
+    path:     gallery/show/
+    defaults: { _controller: BackBundle:Gallery:showGallery}
+gallery_edit:
+    path:     gallery/edit/{id}/
+    defaults: { _controller: BackBundle:Gallery:editGallery}
+gallery_delete:
+    path:     gallery/delete/{id}/
+    defaults: { _controller: BackBundle:Gallery:deleteGallery}
+
+
+gallery_front_add:
+    path:     gallery/front/add/
+    defaults: { _controller: BackBundle:GalleryFront:addGallery}
+gallery_front_show:
+    path:     gallery/front/show/
+    defaults: { _controller: BackBundle:GalleryFront:showGallery}
+gallery_front_edit:
+    path:     gallery/front/edit/{id}/
+    defaults: { _controller: BackBundle:GalleryFront:editGallery}
+gallery_front_delete:
+    path:     gallery/front/delete/{id}/
+    defaults: { _controller: BackBundle:GalleryFront:deleteGallery}
+
+realisation_add:
+    path:     realisation/add/
+    defaults: { _controller: BackBundle:Realisation:addRealisation}
+realisation_show:
+    path:     realisation/show/
+    defaults: { _controller: BackBundle:Realisation:showRealisation}
+realisation_edit:
+    path:     realisation/edit/{id}/
+    defaults: { _controller: BackBundle:Realisation:editRealisation}
+realisation_delete:
+    path:     realisation/delete/{id}/
+    defaults: { _controller: BackBundle:Realisation:deleteRealisation}
+
+

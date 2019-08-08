@@ -1,0 +1,41 @@
+
+{% trans_default_domain 'FrontBundle' %}
+
+<!-- HEADER -->
+    <!-- Fixed Header -->
+    <header class="fixed d-inline-block">
+        <div class="navbar">
+            <div class="logo">
+                <a href="{{ path('Front_homepage') }}">
+                    <img id="logo" src="{{ asset('front_assets/images/logo.png') }}" alt="Logo MARMO DESIGN">
+                </a>
+                <a class="title-header" id="logo-min" href="{{ path('Front_homepage') }}">
+                    <span >Marble </span>
+                    <span style="color: #4C5B5C">Factory</span>
+                </a>
+            </div>
+
+            <div class="nav-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <nav class="top_15">
+                <ul>
+                    <li><a href="{{ path('Front_homepage') }}#home" class="one active">{{ 'front_header.home'|trans }}</a></li>
+                    <li><a href="{{ path('Front_homepage') }}#about" class="two">{{ 'front_header.about'|trans }}</a></li>
+                    <li><a href="{{ path('Front_homepage') }}#whatwedo" class="three">{{ 'front_header.services'|trans }}</a></li>
+                    <li><a href="{{ path('Front_homepage') }}#portfolio" class="four">{{ 'front_header.gallery'|trans }}</a></li>
+                    <li><a href="{{ path('Front_homepage') }}#blogs" class="five">{{ 'front_header.realisation'|trans }}</a></li>
+                    <li><a href="{{ path('Front_homepage') }}#contact" class="six">{{ 'front_header.contactus'|trans }}</a></li>
+                    <li>
+                        <ul class="lang-switcher">
+                            <li><a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale' : 'en'})) }}" id="en" >En</a></li>
+                            <li><a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale' : 'fr'})) }}" id="fr">Fr</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+    </header>

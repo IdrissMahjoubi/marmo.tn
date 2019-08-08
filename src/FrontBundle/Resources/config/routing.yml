@@ -1,0 +1,18 @@
+Front_homepage:
+    path:     /
+    defaults: { _controller: FrontBundle:Default:index }
+Front_work:
+    path:     /work
+    defaults: { _controller: FrontBundle:Default:work }
+Front_gallery:
+    path:     /gallery/{filter}
+    defaults: { _controller: FrontBundle:Default:gallery,filter: all }
+Front_contact:
+    path:     /contact
+    defaults: { _controller: FrontBundle:Default:Contact }
+send_mail:
+    path:     /sendMail
+    defaults: { _controller: FrontBundle:Mailer:sendMail }
+Front_work_details:
+    path:     /work/details/{id}
+    defaults: { _controller: FrontBundle:Default:workDetails }

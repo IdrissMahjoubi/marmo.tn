@@ -1,0 +1,32 @@
+{% extends 'base_front.html.twig' %}
+
+{% block header %}
+    {% include 'front/fixed-header.html.twig' %}
+{% endblock %}
+
+{% block body %}
+
+    <!-- Modal -->
+    <div class="blogs-page top_120">
+    <div class="container padding_30">
+        <div class="row">
+            {% for r in realisation %}
+                <!-- blog 1 -->
+                <a href="{{ path('Front_work_details',{ 'id': r.id }) }}"  class="col-md-4 col-sm-6 blog bottom_45">
+                    <div class="image">
+                        <img onclick="doModal('{{ r.name }}', '{{ r.description }}')" class="images" src="{{ asset('uploads/'~ r.image.imageName) }}" alt="{{ r.description }}">
+                    </div>
+                    {% if app.request.get('_locale') == 'fr'%}
+                        <span class="title">{{ r.name }}</span>
+                        <h3 class="title-desc">{{ r.description }}</h3>
+                    {% else %}
+                        <span class="title">{{ r.name2 }}</span>
+                        <h3 class="title-desc">{{ r.description2 }}</h3>
+                    {%  endif  %}
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

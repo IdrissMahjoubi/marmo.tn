@@ -1,0 +1,32 @@
+{% extends 'base_front.html.twig' %}
+{% trans_default_domain 'FrontBundle' %}
+{% block header %}
+    {% include 'front/fixed-header.html.twig' %}
+{% endblock %}
+
+{% block body %}
+
+
+    <section class="portfolio white-bg padbot_120" id="portfolio">
+        <div class="container bottom_60">
+            <div class="section-title wow fadeInUp" data-wow-delay="0.2s">
+            </div>
+            <!--Portfolio Items-->
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="row">
+                        {% for picture in gallery %}
+                            <a href="{{ asset('uploads/'~ picture.image.imageName) | imagine_filter('my_thumb') }}" class="single_item link col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
+                                <img src="{{ asset('uploads/'~ picture.image.imageName  ) | imagine_filter('my_thumb') }}" alt="{{ picture.description }}">
+                          <h3 class="title">{{ picture.name }}</h3>
+                          <span>{{ picture.description }}</span>
+                            </a>
+                    
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+{% endblock %}

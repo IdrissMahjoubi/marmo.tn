@@ -1,0 +1,282 @@
+{% extends 'base_front.html.twig' %}
+{% trans_default_domain 'FrontBundle' %}
+
+{% block header %}
+    {% include 'front/header.html.twig' %}
+{% endblock %}
+
+{% block body %}
+    <!-- HOME -->
+    <section id="home" class="home">
+        <div class="home-slider">
+            <div id="slides">
+                <div class="slides-container">
+                    {% for slider in sliders %}
+                        <img src="{{ asset('uploads/'~ slider.image.imageName) }}" alt="{{ slider.name }}">
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="home-content">
+                <img class="top_30" src="{{ asset('front_assets/images/logo-white.png') }}" alt="Logo MARMO DESIGN">
+                <div class="home-title top_15">
+                    <span class="marmo-title">MARMO</span>
+                    <span class="design-title">DESIGN</span>
+                    <span class="factory-title"><strong> Marble Factory </strong> </span>
+                </div>
+            <div>
+                <button class="site-btn top_15"><a href="{{ path('Front_contact') }}">{{ 'Trouvez-Nous'|trans }}</a></button>
+            </div>
+            <a class="home-down bounce" href="#HomeAncor"><i class="fa fa-angle-down"></i></a>
+        </div>
+        <!-- bottom shape -->
+        <svg class="left-svg" width="50%" height="80" viewBox="0 0 100 102" preserveAspectRatio="none">
+            <path d="M0 100 L100 100 L0 10 Z"></path>
+        </svg>
+        <svg class="right-svg" width="50%" height="80" viewBox="0 0 100 102" preserveAspectRatio="none">
+            <path d="M0 100 L100 100 L100 10 Z"></path>
+        </svg>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about white-bg padbot_120" id="about">
+        <div class="container">
+            <div class="section-title bottom_15">
+                <h2   id="HomeAncor" class="title wow fadeInUp" data-wow-delay="0.2s">{{ 'A-PROPOS'|trans}}<span class="number">01</span> </h2>
+            </div>
+            <div class="row bottom_60 top_90">
+                <div  class="col-lg-5 col-md-6 image wow fadeInUp" data-wow-delay="0.4s">
+                    <img src="{{ asset('uploads/'~ about.image.imageName) }}" alt="{{about.description}}">
+                </div>
+                <div class="col-lg-6 col-md-6 offset-lg-1 text wow fadeInUp" data-wow-delay="0.6s">
+{% if app.request.get('_locale') == 'fr'%}
+                    <p>{{ about.description }} </p>
+{% else %}
+                    <p>{{ about.description2 }} </p>
+{%  endif  %}
+                </div>
+            </div>
+        </div>
+        <!-- bottom shape -->
+        <svg class="left-svg" width="50%" height="80" viewBox="0 0 100 102" preserveAspectRatio="none">
+            <path d="M0 100 L100 100 L0 10 Z"></path>
+        </svg>
+        <svg class="right-svg" width="50%" height="80" viewBox="0 0 100 102" preserveAspectRatio="none">
+            <path d="M0 100 L100 100 L100 10 Z"></path>
+        </svg>
+    </section>
+
+    <!-- WHAT CAN WE DO SECTION -->
+    <section class="whatwedo gray-bg padbot_120" id="whatwedo">
+        <div class="container">
+            <div class="section-title bottom_15">
+                <h2 class="title wow fadeInUp" data-wow-delay="0.2s">{{ 'NOS-SERVICES'|trans}}<span class="number">02</span> </h2>
+            </div>
+            <div class="row bottom_60">
+                <div class="col-md-4 col-sm-4 service text-center bottom_90 wow fadeInUp" data-wow-delay="0.4s">
+                    <a class="none" href="{{ path('Front_gallery')~'/sculpture' }}"><i class="flaticon-pillar-1"></i>
+                        <h3 class="title top_15">{{ 'Sculpture'|trans}}</h3>
+                        <p>{{ 'Galerie de sculpture'|trans}}</p>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-4  service text-center bottom_90 wow fadeInUp" data-wow-delay="0.6s">
+                    <a class="none" href="{{ path('Front_gallery')~'/revetement' }}"> <i class="flaticon-draws"></i>
+                        <h3 class="title top_15">{{ 'Revêtement'|trans}}</h3>
+                        <p>{{ 'Galerie de Revêtement'|trans}}</p>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-4  service text-center bottom_90 wow fadeInUp" data-wow-delay="0.8s">
+                    <a class="none" href="{{ path('Front_gallery')~'/finition' }}"><i class="flaticon-layout"></i>
+                        <h3 class="title top_15">{{ 'Finition'|trans}}</h3>
+                        <p>{{ 'Galerie de Finition'|trans}}</p>
+                    </a>
+                </div>
+                <div class="col-md-6 col-sm-6  service text-center wow fadeInUp" data-wow-delay="1.0s">
+                    <a class="none" href="{{ path('Front_gallery')~'/premiere' }}"><i class="flaticon-cube"></i>
+                        <h3 class="title top_15">{{ 'Matiére premiére'|trans}}</h3>
+                        <p>{{ 'Galerie de matiére premiére'|trans}}</p>
+                    </a>
+                </div>
+                <div class="col-md-6 col-sm-6  service text-center wow fadeInUp" data-wow-delay="1.0s">
+                    <a class="none" href="{{ path('Front_gallery')~'/Autre' }}"><i class="flaticon-add-circular-button"></i>
+                        <h3 class="title top_15">{{ 'Autre'|trans}}</h3>
+                        <p>{{ 'Autre_desc'|trans}}</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- bottom shape -->
+        <svg class="left-svg" width="50%" height="80" viewBox="0 0 100 102" preserveAspectRatio="none">
+            <path d="M0 100 L100 100 L0 10 Z"></path>
+        </svg>
+        <svg class="right-svg" width="50%" height="80" viewBox="0 0 100 102" preserveAspectRatio="none">
+            <path d="M0 100 L100 100 L100 10 Z"></path>
+        </svg>
+    </section>
+
+    <!-- PORTFOLIO SECTION -->
+    <section class="portfolio white-bg padbot_120" id="portfolio">
+        <div class="container bottom_60">
+            <div class="section-title wow fadeInUp" data-wow-delay="0.2s">
+                <h2 class="title wow fadeInUp" data-wow-delay="0.2s">{{ 'GALERIE'|trans}}<span class="number">03</span> </h2>
+            </div>
+            <!--Portfolio Items-->
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="row">
+                        {% for picture in gallery %}
+                            <a href="{{ asset('uploads/'~ picture.image.imageName) | imagine_filter('my_thumb') }}" class="single_item link col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
+                                <img src="{{ asset('uploads/'~ picture.image.imageName) | imagine_filter('my_thumb') }}" alt="{{ picture.description }}">
+                            </a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <a href="{{ path('Front_gallery')}}" class="site-btn wow fadeInUp" data-wow-delay="1.0s">{{ 'Charger Plus'|trans}}</a>
+        </div>
+        <!-- bottom shape -->
+        <svg class="left-svg" width="50%" height="80" viewBox="0 0 100 102" preserveAspectRatio="none">
+            <path d="M0 100 L100 100 L0 10 Z"></path>
+        </svg>
+        <svg class="right-svg" width="50%" height="80" viewBox="0 0 100 102" preserveAspectRatio="none">
+            <path d="M0 100 L100 100 L100 10 Z"></path>
+        </svg>
+    </section>
+
+    <!-- BLOG SECTION -->
+    <section class="blogs gray-bg padbot_120" id="blogs">
+        <div class="container bottom_60">
+            <div class="section-title bottom_15">
+                <h2 class="title wow fadeInUp" data-wow-delay="0.2s">{{ 'NOS REALISATIONS'|trans}} <span class="number">04</span> </h2>
+            </div>
+            <div class="row">
+                {% for r in realisation %}
+                    <!-- blog 1 -->
+                    <a href="{{ path('Front_work_details',{ 'id': r.id }) }}" class="col-md-4 blog wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="image">
+                            <img src="{{ asset('uploads/'~ r.image.imageName) | imagine_filter('my_thumb')  }}" alt="{{ r.description }}">
+                        </div>
+                        {% if app.request.get('_locale') == 'fr'%}
+                            <h3 class="title">{{ r.name }}</h3>
+                        {% else %}
+                            <h3 class="title">{{ r.name2 }}</h3>
+                        {%  endif  %}
+                    </a>
+                {% endfor %}
+            </div>
+            <a href="{{ path('Front_work') }}" class="site-btn wow fadeInUp top_30" data-wow-delay="1.0s">{{ 'Charger Plus'|trans}}</a>
+        </div>
+        <!-- bottom shape -->
+        <svg class="left-svg" width="50%" height="80" viewBox="0 0 100 102" preserveAspectRatio="none">
+            <path d="M0 100 L100 100 L0 10 Z"></path>
+        </svg>
+        <svg class="right-svg" width="50%" height="80" viewBox="0 0 100 102" preserveAspectRatio="none">
+            <path d="M0 100 L100 100 L100 10 Z"></path>
+        </svg>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact last-section" id="contact">
+        <div class="container text-center padbot_120">
+            <div class="col-md-8 offset-md-2">
+                <div class="section-title">
+                    <h2 class="title wow fadeInUp" data-wow-delay="0.2s">{{ 'CONTACTEZ-NOUS'|trans}}<span class="number">05</span> </h2>
+                </div>
+                <p class="wow fadeInUp" data-wow-delay="0.4s">
+                    {{ 'contact.desc'|trans}}</p>
+                <a href="{{ path('Front_contact') }}" class="site-btn wow fadeInUp" data-wow-delay="1.0s">{{ 'Où nous trouver'|trans}}</a>
+
+
+                <div class="information top_30 wow fadeInUp" data-wow-delay="0.6s">
+                    <ul class="container details">
+                        <li>
+                            <p>E-mail:</p>
+                            <a href="mailto:{{ Contact['showroom'].getEmail }}">
+                                {{ Contact['showroom'].getEmail }}
+                            </a>
+                        </li>
+                        <li>
+                            <p>{{ 'Showroom'|trans}}:</p>
+                            <a href="tel:{{ Contact['showroom'].getNumberone }}">
+                                {{ Contact['showroom'].getNumberone }}
+                            </a>
+                            <span> / </span>
+                            <a href="tel:{{ Contact['showroom'].getNumbertwo }}">
+                                 {{ Contact['showroom'].getNumbertwo }}
+                            </a>
+                        </li>
+
+                        <li>
+                            <p>{{ 'Marbrerie'|trans}}:</p>
+                            <a href="tel:{{ Contact['usine'].getNumberone }}">
+                                {{ Contact['usine'].getNumberone }}
+                            </a>
+                            <span> / </span>
+                            <a href="tel:{{ Contact['usine'].getNumbertwo }}">
+                                {{ Contact['usine'].getNumbertwo }}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="social top_30 wow fadeInUp" data-wow-delay="0.8s">
+                    <a href="{{ socialMedia.facebook }}"><i class="fab fa-facebook"></i>  </a>
+                    <a href="{{ socialMedia.instagram }}"><i class="fab fa-instagram" aria-hidden="true"></i>  </a>
+                </div>
+                <!-- Contact Form -->
+                {% set flashbag_notices = app.session.flashbag.get('notice') %}
+                {% if(flashbag_notices is not empty)%}
+
+                    <ul class="message">
+
+                        {% for notice in flashbag_notices %}
+                            <li>{{ notice }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+
+
+                {{ form_start(form,{ 'attr': {'class' : 'contact-form top_60 wow fadeInUp','data-wow-delay' : '1.0s','method' : 'POST'} }) }}
+                <div class="row">
+                    <!--Name-->
+                    <div class="col-md-6">
+
+
+                        {{ form_widget(form.object,{ 'attr': {'class' : 'form-inp'  ,'id' : 'con_name','name':'con_name','required':'true'} }) }}
+                    </div>
+                    <!--Email-->
+                    <div class="col-md-6">
+
+                        {{ form_widget(form.mail,{'attr': {'class' : 'form-inp' ,'id' : 'con_email','name':'con_email','required':'true'} }) }}
+                    </div>
+                    <div class="col-md-12">
+                        <!--Message-->
+
+                        {{ form_widget(form.subject,{'attr': {'class' : 'form-inp'  ,'id' : 'con_message','name':'con_message','rows':'8','required':'true'} }) }}
+                        <button id="con_submit" class="site-btn top_60 pull-right" type="submit">{{ 'message'|trans }}</button>
+                    </div>
+                </div>
+                {{ form_end(form) }}
+            </div>
+        </div>
+        <!-- bottom shape -->
+        <svg class="left-svg" width="50%" height="80" viewBox="0 0 100 102" preserveAspectRatio="none">
+            <path d="M0 100 L100 100 L0 10 Z"></path>
+        </svg>
+        <svg class="right-svg" width="50%" height="80" viewBox="0 0 100 102" preserveAspectRatio="none">
+            <path d="M0 100 L100 100 L100 10 Z"></path>
+        </svg>
+    </section>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        //SUPER SLİDER
+        $('#slides').superslides({
+            animation: 'fade',
+            play: 3000
+        });
+    </script>
+
+{% endblock %}

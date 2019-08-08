@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'chathuraregular';
+    src: url('chathura-regular-webfont.eot');
+    src: url('chathura-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('chathura-regular-webfont.woff') format('woff'),
+         url('chathura-regular-webfont.ttf') format('truetype'),
+         url('chathura-regular-webfont.svg#chathuraregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'phoeniciaexpand';
+    src: url('phoeniciaexpand.eot');
+    src: local('☺'), url('phoeniciaexpand.woff') format('woff'), url('phoeniciaexpand.ttf') format('truetype'), url('phoeniciaexpand.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+

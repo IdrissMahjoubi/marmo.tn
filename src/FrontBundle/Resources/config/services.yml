@@ -1,0 +1,10 @@
+services:
+#    Front.example:
+#        class: FrontBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
+     app.twig.database_globals_extension:
+         class: FrontBundle\Twig\Extension\DatabaseGlobalsExtension
+         arguments: ["@doctrine.orm.entity_manager"]
+         tags:
+         - { name: twig.extension }
+
